@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./img.png" alt="Smart Crime Management Banner" width="100%">
+  <img src="./screenshots/img.png" alt="Smart Crime Management Banner" width="100%">
 </p>
 
 # Smart Crime Management and Region-Based Alert System 🎯
@@ -45,7 +45,7 @@ A role-based web application that automates the FIR lifecycle. By integrating re
 
 List the key features of your project:
 - **Role-Based Access Control:** Distinct dashboards and permissions for Admins, Police Officers, and Citizens.
-- **FIR Pipeline Management:** Citizens can file complaints with evidence; Admins can assign them; Officers can update status and add investigation notes.
+- **FIR Pipeline Management:** Citizens scan file complaints with evidence; Admins can assign them; Officers can update status and add investigation notes.
 - **Vibrant Glassmorphic UI:** Modern, responsive design using neon gradients and translucent frosted-glass aesthetics.
 - **Real-Time Notifications:** polling-based notification system that alerts users of case assignments and status changes instantly.
 - **Crime Analytics:** Visualized data insights for Admins to track crime trends and station performance.
@@ -87,25 +87,25 @@ npm run dev
 #### Screenshots (Add at least 3)
 
 <p align="center">
-  <img src="./login.png" alt="login page" width="100%">
+  <img src="./screenshots/login.png" alt="login page" width="100%">
 </p>
 <p align="center">
-  <img src="./citizen.png" alt="citizen page" width="100%">
+  <img src="./screenshots/citizen.png" alt="citizen page" width="100%">
 </p>
 <p align="center">
-  <img src="./admin.png" alt="admin page" width="100%">
+  <img src="./screenshots/admin.png" alt="admin page" width="100%">
 </p>
 #### Diagrams
 
 **System Architecture:**
 
 <p align="center">
-  <img src="./architeture.jpeg" alt="architecture page" width="100%">
+  <img src="./screenshots/architeture.jpeg" alt="architecture page" width="100%">
 </p>
 
 **Application Workflow:**
 <p align="center">
-  <img src="./workflow.png" alt="workflow page" width="100%">
+  <img src="./screenshots/workflow.png" alt="workflow page" width="100%">
 </p>
 ---
 
