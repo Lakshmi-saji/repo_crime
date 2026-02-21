@@ -1,80 +1,174 @@
-# Smart Crime Management System
+<p align="center">
+  <img src="./img.png" alt="Smart Crime Management Banner" width="100%">
+</p>
 
-A full-stack web application for crime management, FIR tracking, and region-based alerts.
+# Smart Crime Management and Region-Based Alert System 🎯
 
-## Tech Stack
-- **Frontend**: React.js + Vite
-- **Backend**: Firebase (Firestore + Auth + Storage)
-- **Email Alerts**: EmailJS (client-side)
-- **AI Module**: Python Flask (optional)
+## Basic Details
 
-## Setup
+### Team Name: [Your Team Name]
 
-### 1. Firebase Configuration
-Replace the placeholder values in `.env.local` with your Firebase project credentials:
-```
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-```
+### Team Members
+- Member 1: [Lakshmipriya M S] - [Viswajyothi College Of Engineering and Technology]
+- Member 2: [Maria Peeus] - [Viswajyothi College Of Engineering and Technology]
 
-### 2. Firebase Console Setup
-1. **Authentication**: Enable Email/Password sign-in method
-2. **Firestore**: Create database, then deploy the `firestore.rules`
-3. **Storage**: Enable Firebase Storage
+### Hosted Project Link
+[https://repo-crime.vercel.app/]
 
-### 3. EmailJS (Optional — for email alerts)
-1. Go to https://www.emailjs.com and create a free account
-2. Create an Email Service (Gmail recommended)
-3. Create a template with these variables: `{{to_email}}`, `{{station_name}}`, `{{fir_id}}`, `{{crime_type}}`, `{{location}}`, `{{description}}`, `{{citizen_name}}`, `{{date_time}}`
-4. Fill in the EmailJS env vars in `.env.local`
+### Project Description
+A centralized digital platform designed to streamline crime reporting and law enforcement workflows. It enables citizens to file FIRs online, allows administrators to assign cases to specific officers, and provides real-time status tracking via a modern, glassmorphic dashboard.
 
-### 4. Run Frontend
+### The Problem statement
+Traditional crime reporting relies on fragmented manual processes, leading to slow response times, lack of transparency for victims, and difficulty in managing cross-jurisdiction data and officer assignments.
+
+### The Solution
+A role-based web application that automates the FIR lifecycle. By integrating real-time notifications, automated jurisdiction-based alerts, and a transparent progress pipeline (Pending -> Investigating -> Closed), the system ensures accountability and speed in the justice process.
+
+---
+
+## Technical Details
+
+### Technologies/Components Used
+
+**For Software:**
+- Languages used: JavaScript (ES6+), CSS3
+- Frameworks used: React.js (Vite)
+- Libraries used: React Router (Navigation), Chart.js (Analytics), React Icons, UUID (Data IDs), React Hot Toast (Notifications)
+- Tools used: VS Code, LocalStorage (Data Persistence), Git
+
+**For Hardware:**
+- Not Applicable (Software-only solution)
+
+---
+
+## Features
+
+List the key features of your project:
+- **Role-Based Access Control:** Distinct dashboards and permissions for Admins, Police Officers, and Citizens.
+- **FIR Pipeline Management:** Citizens can file complaints with evidence; Admins can assign them; Officers can update status and add investigation notes.
+- **Vibrant Glassmorphic UI:** Modern, responsive design using neon gradients and translucent frosted-glass aesthetics.
+- **Real-Time Notifications:** polling-based notification system that alerts users of case assignments and status changes instantly.
+- **Crime Analytics:** Visualized data insights for Admins to track crime trends and station performance.
+- **Criminal Records Database:** Centralized management of criminal profiles and history for law enforcement.
+
+---
+
+## Implementation
+
+### For Software:
+
+#### Installation
 ```bash
-cd /Users/mac/Desktop/crime
+# Clone the repository
+git clone [https://github.com/Lakshmi-saji/repo_crime.git]
+cd crime
+
+# Install dependencies
+npm install
+```
+
+#### Run
+```bash
+# Start the development server
 npm run dev
 ```
 
-### 5. Run Flask AI API (Optional)
-```bash
-cd flask_api
-pip install -r requirements.txt
-python app.py
-```
+### For Hardware:
 
-## Roles
-| Role | Default Dashboard | Capabilities |
-|------|-------------------|-------------|
-| **Admin** | `/admin` | Assign FIRs, manage officers/stations, view analytics |
-| **Officer** | `/officer` | View & update assigned cases, criminal records |
-| **Citizen** | `/citizen` | Submit FIRs, track status |
+#### Components Required
+- Not Applicable
 
-## Project Structure
-```
-src/
-├── contexts/          # AuthContext, NotificationContext
-├── firebase/          # Firebase config
-├── pages/
-│   ├── admin/         # AdminDashboard, AllFIRs, Officers, Stations
-│   ├── officer/       # OfficerDashboard
-│   ├── citizen/       # CitizenDashboard, SubmitFIR, MyFIRs
-│   └── shared/        # CriminalRecords, Analytics
-├── services/          # firestoreService, storageService, alertService
-└── components/        # Sidebar, Navbar, ProtectedRoute
-flask_api/
-├── app.py             # Flask REST API
-├── classifier.py      # ML crime classifier
-└── requirements.txt
-```
+---
 
-## Features
-- 🔐 Role-Based Authentication (Admin, Officer, Citizen)
-- 📋 FIR Submission with Evidence Upload
-- 🗂️ Case Management with Officer Assignment
-- 🚔 Criminal Records Database
-- 🔔 Automated Station Alerts (in-app + email)
-- 📊 Analytics Dashboard (4 Chart.js charts)
-- 🤖 AI Crime Type Classifier (Flask)
+## Project Documentation
+
+### For Software:
+
+#### Screenshots (Add at least 3)
+
+<p align="center">
+  <img src="./login.png" alt="login page" width="100%">
+</p>
+<p align="center">
+  <img src="./citizen.png" alt="citizen page" width="100%">
+</p>
+<p align="center">
+  <img src="./admin.png" alt="admin page" width="100%">
+</p>
+#### Diagrams
+
+**System Architecture:**
+
+<p align="center">
+  <img src="./architeture.jpeg" alt="architecture page" width="100%">
+</p>
+
+**Application Workflow:**
+<p align="center">
+  <img src="./workflow.png" alt="workflow page" width="100%">
+</p>
+---
+
+## Additional Documentation
+
+### For Web Projects with Backend:
+
+#### API Documentation (Simulated via Services)
+
+**Firestore Service (LocalStorage)**
+
+##### Endpoints (Methods)
+
+**async createFIR(data)**
+- **Description:** Creates a new FIR entry with a unique UUID.
+- **Returns:** `firId` (string)
+
+**async getFIRsByOfficer(officerId)**
+- **Description:** Fetches all cases assigned specifically to the logged-in officer.
+
+**async updateFIR(id, updates)**
+- **Description:** Updates status or adds investigation notes to an existing case.
+
+---
+
+## Project Demo
+
+### Video
+[Project Demo Video](https://drive.google.com/file/d/1Vci9i_oYXNgNO6x7w23YCJ-QKeR860Ii/view?usp=share_link)
+
+*The video demonstrates the end-to-end flow of a Citizen filing a report, an Admin assigning it in the management portal, and an Officer closing the case.*
+
+---
+
+## AI Tools Used (Optional - For Transparency Bonus)
+
+**Tool Used:** Antigravity (Advanced Agentic Coding Assistant)
+
+**Purpose:** 
+- Generated boilerplate React components and modular service structures.
+- Assorted with the refactor from Firebase to LocalStorage for zero-setup portability.
+- Designed the "Electric Orange & Magenta" glassmorphic UI system.
+
+**Percentage of AI-generated code:** Approximately 85%
+
+**Human Contributions:**
+- Architecture design and feature prioritization.
+- UI/UX theme selection and color palette review.
+- Project logic validation and final documentation review.
+
+---
+
+## Team Contributions
+
+- Lakshmipriya M S: Frontend development, Routing, and Auth logic integration.
+- Maria Peeus: Service layer implementation, Data persistence logic, and Documentation.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with ❤️ at TinkerHub
