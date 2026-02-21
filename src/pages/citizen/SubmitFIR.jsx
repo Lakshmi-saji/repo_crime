@@ -37,7 +37,7 @@ export default function SubmitFIR() {
         if (!form.crimeType) { toast.error('Please select a crime type'); return; }
         setLoading(true);
         try {
-            const firData = { ...form, citizenId: currentUser.uid, citizenEmail: currentUser.email };
+            const firData = { ...form, citizenId: currentUser.uid, citizenEmail: currentUser.email, status: 'Pending' };
             const docRef = await createFIR(firData);
             const firId = docRef.id;
 

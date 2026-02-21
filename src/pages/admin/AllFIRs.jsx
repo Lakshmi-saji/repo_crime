@@ -28,7 +28,7 @@ export default function AllFIRs() {
     async function assignOfficer(fir) {
         if (!selOfficer) return toast.error('Select an officer first');
         const officer = officers.find(o => o.uid === selOfficer || o.id === selOfficer);
-        await updateFIR(fir.id, { assignedTo: selOfficer, assignedOfficerName: officer?.name, status: 'Investigating' });
+        await updateFIR(fir.id, { assignedOfficerId: selOfficer, assignedOfficerName: officer?.name, status: 'Investigating' });
         await createNotification(selOfficer, 'Case Assigned', `You have been assigned FIR #${fir.id.slice(-6).toUpperCase()}. Crime: ${fir.crimeType} at ${fir.location}.`, 'info');
         toast.success('Officer assigned!');
         setAssigning(null);
@@ -101,8 +101,8 @@ export default function AllFIRs() {
                                                         <button className="btn btn-secondary btn-sm" onClick={() => setAssigning(null)}>✕</button>
                                                     </div>
                                                 ) : (
-                                                    <button className="btn btn-secondary btn-sm" onClick={() => { setAssigning(f.id); setSelOfficer(f.assignedTo || ''); }}>
-                                                        <MdPerson /> {f.assignedTo ? 'Reassign' : 'Assign'}
+                                                    <button className="btn btn-secondary btn-sm" onClick={() => { setAssigning(f.id); setSelOfficer(f.assignedOfficerId || ''); }}>
+                                                        <MdPerson /> {f.assignedOfficerId ? 'Reassign' : 'Assign'}
                                                     </button>
                                                 )}
                                             </td>
