@@ -2,11 +2,11 @@
   <img src="./screenshots/img.png" alt="Smart Crime Management Banner" width="100%">
 </p>
 
-# Smart Crime Management and Region-Based Alert System 🎯
+# Smart Crime Management🎯
 
 ## Basic Details
 
-### Team Name: [Your Team Name]
+### Team Name: [Mentos]
 
 ### Team Members
 - Member 1: [Lakshmipriya M S] - [Viswajyothi College Of Engineering and Technology]
